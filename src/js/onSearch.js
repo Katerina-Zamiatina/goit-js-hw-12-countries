@@ -1,6 +1,7 @@
 import fetchCountries from './fetchCountries';
 import updateMarkupCountry from './updateMarkupCountry';
 import updateMarkupCountries from './updateMarkupCountries';
+import refs from './refs';
 import error from './note';
 
 function onSearch(event) {
