@@ -46,13 +46,19 @@ img {
   margin-right: auto;
 }
 
-.country__title {
+.country__info--text {
   font-size: large;
   font-weight: 700;
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
-.country__info--text {
-  margin-left: 100px;
+
+.country__subtitle {
+  font-size: medium;
+  font-weight: 500;
+  margin: 10px;
 }
+
 .country__flag {
   margin-right: 100px;
 }

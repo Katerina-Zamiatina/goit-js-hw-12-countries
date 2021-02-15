@@ -6,19 +6,18 @@
             <img src="{{flag}}" alt="{{name}} flag" width="250" />
         </div>
         <ul>
-            <li>
-                <span class="country__title">Capital:</span>
+            <li class="country__info--text">
+                <span>Capital:</span>
                 <span class="country__subtitle">{{capital}}</span>
             </li>
-            <li>
-                <span class="country__title">Population:</span>
-                <span class="subtitle">{{population}}</span>
+            <li class="country__info--text">
+                <span>Population:</span>
+                <span class="country__subtitle">{{population}}</span>
             </li>
-            <li>
-                <ul class="country__info--text">
-                    <span class="country__title">Languages:</span>
+            <li class="country__info--text">
+                <ul>Languages:
                     {{#each languages}}
-                    <li class="subtitle">{{name}}</li>
+                    <li class="country__subtitle">{{name}}</li>
                     {{/each}}
                 </ul>
             </li>
