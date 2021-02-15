@@ -31,6 +31,10 @@ img {
   height: auto;
 }
 
+.search-form {
+  margin-bottom: 30px;
+}
+
 .country__info {
   display: flex;
   align-items: stretch;

@@ -12,12 +12,12 @@ function onSearch(event) {
   fetchCountries(queryCountry)
     .then(data => {
       if (data.length === 1) {
-        updateMarkupCountry(data);
+        return updateMarkupCountry(data);
       }
       if (data.length > 2 && data.length < 10) {
-        updateMarkupCountries(data);
+        return updateMarkupCountries(data);
       }
-      if (data.length <= 1) {
+      if (data.length >= 1) {
         error({
           text: 'Try more specific keywords',
           delay: 1000,
