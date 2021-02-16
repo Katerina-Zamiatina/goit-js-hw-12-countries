@@ -6,10 +6,14 @@ import refs from './refs';
 function updateMarkupCountries(data) {
   const markup = countriesTemplate(data);
   const markupCountry = countryTemplate(data);
-  
-  if (refs.searchForm.value === '') {
-    return;
-  }
+
+  // if (data.status === 404) {
+  //   return error({
+  //     text: 'Something went wrong',
+  //     delay: 2000,
+  //   });
+  // }
+
   if (data.length === 1) {
     refs.countryContainer.insertAdjacentHTML('beforeend', markupCountry);
     return;
