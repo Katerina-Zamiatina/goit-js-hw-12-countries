@@ -17,10 +17,3 @@ function clearSearchFormContainer() {
 
 export default onSearch;
 
-// if (refs.inputSearch.value !== ‘’) {
-//   return countriesAPI
-//     .fetchCountries(refs.inputSearch.value)
-//     .then(data => renderCountries(data))
-//     .catch((err) => {
-//       console.warn(err)
-//     })

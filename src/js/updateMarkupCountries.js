@@ -4,19 +4,11 @@ import error from './note';
 import refs from './refs';
 
 function updateMarkupCountries(data) {
-  const markup = countriesTemplate(data);
-  const markupCountry = countryTemplate(data);
-
-  // if (data.status === 404) {
-  //   return error({
-  //     text: 'Something went wrong',
-  //     delay: 2000,
-  //   });
-  // }
-
-  if (data.length === 1) {
-    refs.countryContainer.insertAdjacentHTML('beforeend', markupCountry);
-    return;
+  if (!data || !data.length) {
+    return error({
+      text: 'Something went wrong',
+      delay: 2000,
+    });
   }
 
   if (data.length > 10) {
@@ -24,10 +16,13 @@ function updateMarkupCountries(data) {
       text: 'Try more specific keywords',
       delay: 2000,
     });
-    return;
+  } else if (data.length >= 2) {
+    const markupAll = countriesTemplate(data);
+    refs.countryContainer.insertAdjacentHTML('beforeend', markupAll);
+  } else if (data.length === 1) {
+    const markup = countryTemplate(data);
+    refs.countryContainer.insertAdjacentHTML('beforeend', markup);
   }
-
-  refs.countryContainer.insertAdjacentHTML('beforeend', markup);
 }
 
 export default updateMarkupCountries;
