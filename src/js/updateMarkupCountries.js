@@ -4,7 +4,7 @@ import error from './note';
 import refs from './refs';
 
 function updateMarkupCountries(data) {
-  if (!data || !data.length) {
+  if (!data) {
     return error({
       text: 'Something went wrong',
       delay: 2000,
@@ -17,12 +17,15 @@ function updateMarkupCountries(data) {
       delay: 2000,
     });
   } else if (data.length >= 2) {
-    const markupAll = countriesTemplate(data);
-    refs.countryContainer.insertAdjacentHTML('beforeend', markupAll);
+    return renderMarkup(countriesTemplate, data);
   } else if (data.length === 1) {
-    const markup = countryTemplate(data);
-    refs.countryContainer.insertAdjacentHTML('beforeend', markup);
+    return  renderMarkup(countryTemplate, data);
   }
+}
+
+function renderMarkup(templateFn, data) {
+  const markup = templateFn(data);
+  return refs.countryContainer.insertAdjacentHTML('beforeend', markup);
 }
 
 export default updateMarkupCountries;
